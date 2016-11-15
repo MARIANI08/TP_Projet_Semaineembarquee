@@ -1,0 +1,4 @@
+config BR2_PACKAGE_MYAPPLICATION
+	bool hello
+	help
+		technologie avancee

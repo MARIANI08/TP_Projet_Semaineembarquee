@@ -1,0 +1,14 @@
+MYAPPLICATION_VERSION = 1.0
+MYAPPLICATION_SITE = $(TOPDIR)/package/myapplication
+MYAPPLICATION_SITE_METHOD = local
+MYAPPLICATION_LICENSE = GPLv3+
+
+define MYAPPLICATION_BUILD_CMDS
+	CC=$(TARGET_CC) $(MAKE) -C $(@D)
+endef
+
+define MYAPPLICATION_INSTALL_TARGET_CMDS
+	prefix=$(TARGET_DIR) $(MAKE) -C $(@D) install
+endef
+
+$(eval $(generic-package))
